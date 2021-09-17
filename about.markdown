@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Bvsk Patnaik, and I am a software engineer by profession. I work broadly on areas relating to systems design and implementation. Currently, I am a blockchain developer working at [Marlin Labs](https://www.marlin.org/) on [MEV](https://arxiv.org/abs/1904.05234) related projects.
+My name is Bvsk Patnaik, and I am a software engineer by profession. I work broadly on areas relating to systems design and implementation. Currently, I am a blockchain developer working at Marlin Labs on MEV based projects. Prior to joining the startup, I worked at a [Tower Research Capital](https://www.tower-research.com/) in a core library team responsible for market data, designing APIs and developing low-latency software for our trading clients.
 
 I completed my undergraduate studies at [IITD](https://home.iitd.ac.in/), majoring in Computer Science and Engineering. I was mentored by [Prof. Sorav Bansal](https://sorav.compiler.ai/) for my undergraduate project on *Optimizing the performance of memory-intensive applications*.
 
