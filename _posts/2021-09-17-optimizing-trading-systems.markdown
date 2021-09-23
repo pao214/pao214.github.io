@@ -9,6 +9,10 @@ Modern hardware coupled with modern compilers allows software developers to writ
 
 ![End of moore's law](/assets/end-of-moores-law.png)
 
+<span style="font-weight:lighter">
+    Source: [Quora](https://www.quora.com/Is-the-Moores-law-reach-at-it-ends-And-What-happens-when-it-ends)
+</span>
+
 Low-latency trading systems notoriously fit this particular narrative where micro-optimization is essential. The essentiality stems from the fact that these trading systems play economic games where the first to react takes it all. These games often involve taking advantage of the inefficiencies in the market to make near-instantaneous and low-risk trades. I highly recommend watching the below youtube video by Carl Cook to understand better how the optimizations of these systems differ from the more traditional ones.
 
 {% include youtubePlayer.html id=page.carl %}
@@ -59,6 +63,7 @@ write_inline():
   ret
 
 {% endhighlight %}
+<span style="font-weight:lighter">Generated using [godbolt.org](https://godbolt.org/)</span>
 
 However, inlining does not always result in a performance improvement, and thus the compilers use heuristics to determine where inlining is useful. As a result, compilers sometimes leave valuable latency improvements on the table. Hence, developers manually decide to always inline or never inline certain functions in the critical code path (also called fast path) and the non-latency-sensitive code path (also called slow path), respectively. The decision to do so involves extensive benchmarking. The below talk goes into more detail on the topic.
 
@@ -71,6 +76,7 @@ Please note that we cannot use Profile-Guided Optimizations (PGO) to help the co
 Trading systems usually maintain their own versions of hash map implementation because intrusive containers leave memory management in the user's control making them more performant than their non-intrusive counterparts. For the uninitiated, please check out [Boost's documentation](https://www.boost.org/doc/libs/1_77_0/doc/html/intrusive/intrusive_vs_nontrusive.html) on intrusive containers. See the figure below for a quick illustration of a diagrammatic comparison between intrusive and non-intrusive hash maps.
 
 ![Intrusive Hash Map](/assets/intrusive-hash-map.png)
+<span style="font-weight:lighter">Generated using [app.diagrams.net](https://app.diagrams.net/)</span>
 
 In our codebase, one common access pattern on the map is to check for the key's existence, execute arbitrary logic and then insert the key into the map. See the code snippet below.
 
