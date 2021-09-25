@@ -203,3 +203,7 @@ A simple behaviour is to reject allocations that result in offsets that overflow
 #### Coordinate across mini-memory pools
 
 The system call `mmap` returns a kernel-chosen address when the first argument to the call is `NULL`. Instead, try specifying the addresses yourselves so that the addresses across memory pools have no overlap. This mechanism avoids gaps in the allocation of blocks from the same memory pool, thus keeping the offsets as low as possible.
+
+## Conclusion
+
+When your application is amenable to x32 ABI, you can gain decent memory and potentially performance savings by switching architectures. On the other hand, if x32 ABI is not viable either because the OS distribution you use does not support the architecture or because you do not want to be limited by the 4GiB memory constraint, do not lose heart. You can still leverage the advantages of using 32-bit pointers by maintaining making some minor changes to your custom memory pool.
